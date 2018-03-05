@@ -1,0 +1,49 @@
+/* ====================
+BASE STYLE
+==================== */
+
+#contact h2 {
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+
+/* ====================
+LAYOUT STYLE
+==================== */
+
+#contact {
+    margin-bottom: 80px;
+}
+
+
+/* ====================
+MODULE STYLE
+==================== */
+
+#title h1 {
+    font-size: 3em;
+}
+
+#contact-info p {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+#contact-form {
+    padding: 0 0 0 50px;
+    border-left-style: solid;
+    border-left-color: rgb(230, 230, 230);
+    border-left-width: 1px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    display: block;
+    width: 100%;
+    border: none;
+    margin-bottom: 20px;
+    padding: 5px 15px;
+    border-radius: 3px;
+    background-color: #f4f3f3;
+}
