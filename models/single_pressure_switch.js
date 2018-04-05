@@ -18,15 +18,13 @@ var singlePressureSwitchSchema = new Schema({
 
 var SinglePressureSwitch = mongoose.model('SinglePressureSwitch', singlePressureSwitchSchema);
 
+/*
+
 mongoose.model('SinglePressureSwitch').remove({}, function (err) {
     if (err) {
         console.log(err);
     }
     console.log('product collection removed');
-
-    /***                     
-     ***   Product Registration for Single Pressure Switches
-     ***/
 
     var P2E = new SinglePressureSwitch({
         model: "P2E Single Low Pressure Switch",
@@ -308,3 +306,5 @@ mongoose.model('SinglePressureSwitch').remove({}, function (err) {
         console.log(product.model + ' saved successfully.');
     });
 });
+
+*/

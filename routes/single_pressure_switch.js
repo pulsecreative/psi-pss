@@ -24,12 +24,18 @@ function round(value, exp) {
   return +(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp));
 }
 
+/*
+==
+== Data Query
+==
+*/
+
 /* GET Page for Single Pressure Switch Product Selection Software. */
 router.get('/', function(req, res, next) {
-  res.render('single_pressure_switch', {});
+  res.render('single_pressure_switch/search', {});
 });
 
-/* Process Submitted Form; Return search Results */
+/* Process Submitted Query Form; Return search Results */
 router.post('/results', function(req, res, next){
     /* 1. Extract submitted data */
     var cutoff_PSI = req.body.cutoff;
@@ -67,8 +73,74 @@ router.post('/results', function(req, res, next){
         models: models
       };
       /* Return search results */
-      res.render('single_pressure_switch_results', query_data);
+      res.render('single_pressure_switch/search_results', query_data);
     });
 });
+
+/*
+==
+== Data Entry
+==
+*/
+
+// GET page for single pressure switch data entry point
+router.get('/data-entry', function(req, res, next){
+  // GET all current models
+  SinglePressureSwitch
+  .find()
+  .sort('model')
+  .exec(function(err, models) {
+    if (err) {
+      console.log(err);
+    }
+    console.log(models);
+    res.render('single_pressure_switch/data_entry', {models});
+  });
+});
+
+// POST entered product data to the database.
+router.post('/post-data-entry', function(req, res, next){
+  var model = req.body.model;
+  var MaxCutOffPressure = req.body.MaxCutOffPressure;
+  var MinCutOffPressure = req.body.MinCutOffPressure;
+  var MaxDifferential = req.body.MaxDifferential;
+  var MinDifferential = req.body.MinDifferential;
+  var Reset = req.body.Reset;
+  var MaxPressure = req.body.MaxPressure;
+  var profile_img = req.body.profile_img;
+  var certifications = req.body.certifications.replace(/\s+/g, '').split(',');
+  var url = req.body.profile_img;
+
+  console.log(typeof req.body.certifications);
+
+  var new_entry = new SinglePressureSwitch({
+    model: model,
+    MaxCutOffPressure: MaxCutOffPressure,
+    MinCutOffPressure: MinCutOffPressure,
+    MaxDifferential: MaxDifferential,
+    MinDifferential: MinDifferential,
+    Reset: Reset,
+    MaxPressure: MaxPressure,
+    profile_img: profile_img,
+    certifications: certifications,
+    url: url
+  });
+
+  new_entry.save((err, entry) => {
+    if (err) {
+        console.log(err);
+    }
+    console.log(entry.model + ' saved successfully.');
+    console.log(entry);
+  });
+
+  res.redirect('data-entry');
+});
+
+/*
+==
+== Module Enport
+==
+*/
 
 module.exports = router;
