@@ -93,7 +93,6 @@ router.get('/data-entry', function(req, res, next){
     if (err) {
       console.log(err);
     }
-    console.log(models);
     res.render('single_pressure_switch/data_entry', {models});
   });
 });
@@ -111,9 +110,7 @@ router.post('/post-data-entry', function(req, res, next){
   var certifications = req.body.certifications.replace(/\s+/g, '').split(',');
   var url = req.body.profile_img;
 
-  console.log(typeof req.body.certifications);
-
-  var new_entry = new SinglePressureSwitch({
+  SinglePressureSwitch.create({
     model: model,
     MaxCutOffPressure: MaxCutOffPressure,
     MinCutOffPressure: MinCutOffPressure,
@@ -124,17 +121,15 @@ router.post('/post-data-entry', function(req, res, next){
     profile_img: profile_img,
     certifications: certifications,
     url: url
-  });
-
-  new_entry.save((err, entry) => {
+  }, function (err, entry) {
     if (err) {
-        console.log(err);
+      console.log(err);
     }
     console.log(entry.model + ' saved successfully.');
     console.log(entry);
-  });
 
-  res.redirect('data-entry');
+    res.redirect('data-entry');
+  });
 });
 
 /*
