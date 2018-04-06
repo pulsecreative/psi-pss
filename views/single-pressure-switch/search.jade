@@ -1,0 +1,83 @@
+doctype html
+html.no-js(lang='en')
+  head
+    // https://gist.github.com/kevinSuttle/1997924
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='Interested in installing our state-of-the-art HVAC parts into your system? Get in touch with us for a sample or quote today!')
+    meta(name='designer', content='Michelle Yang - Pulse Creative Agency DTLA')
+    meta(name='owner', content='FS Industries, Inc.')
+    
+    title Single Pressure Switch | Product Selection Software | FS Industries, Inc.
+    // Place Favicon in the Root Directory
+    link(rel='shortcut icon', href='')
+    // Page/Theme Stylesheets
+    link(rel='stylesheet', type='text/css', href='../css/core/base.css')
+    link(rel='stylesheet', type='text/css', href='../css/core/theme.css')
+    link(rel='stylesheet', type='text/css', href='../css/products.css')
+    // Custom Font
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300', rel='stylesheet', type='text/css')
+  body
+    // Navigation
+    nav.navbar.navbar-theme.navbar-fixed-top
+      .container
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          a.navbar-brand(href='/')
+            img(alt='Fengshen Industries Inc. Logo', src='../img/logo/FSI_logo_white.svg')
+          p#brand-title
+            | FS 
+            span#brand-title-sm Industries
+        // /.navbar-collapse
+      // /.container-fluid
+    // Pager
+    #pager
+      .container
+        .row
+          .col-xs-10.col-xs-offset-1
+            p
+              a Home |
+              |  
+              span.text-color-primary Product Selection Software
+    // Title
+    #title
+      .container
+        .row
+          .col-xs-10.col-xs-offset-1
+            h1.text-color-primary Product Selection Software
+              span(style="font-size: 75%; display: block; margin-top: 12px; color: black;") Single Pressure Switches
+    // Container for Info and Form
+    #contact
+      .container
+        .row
+          #data-form.col-sm-10.col-sm-offset-1
+            h3.text-color-primary Please specify the cut-off and cut-in pressure. 
+              span(style="font-size: 90%; display: block; margin-top: 8px; color: black;") (Cut-in Pressure must be lower than cut-off pressure)
+            br
+            form(action='/single-pressure-switch/results', method='post')
+              div.col-xs-6
+                label(for='cutoff') Cut Off Pressure (in PSI):  
+                input(type='text', id='cutoff', name='cutoff', placeholder='e.g. 400', style='padding-left: 10px; padding-right: 10px; margin-left: 10px')
+              div.col-xs-6
+                label(for='cutin') Cut In Pressure (in PSI):  
+                input(type='text', id='cutin', name='cutin', placeholder='e.g. 300', style='padding-left: 10px; padding-right: 10px; margin-left: 10px')
+              input(type='submit', name='submit', value='Submit').message-button.text-color-primary
+    // Footer
+    footer
+      .container
+        .row
+          .col-sm-6.footer-left
+            .row
+              .col-sm-5.col-sm-offset-2
+                h2 Company Info
+                p About Us
+                p Contact Us
+                p Newsboard
+              .col-sm-5
+                h2 General Info
+                p Terms of Service
+                p Shipping Info
+                p Privacy Policy
+          .col-sm-6
+            button.message-button.text-color-primary Send Us a Message!
