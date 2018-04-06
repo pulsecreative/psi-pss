@@ -10,8 +10,8 @@ var db = require('./database');
 
 // require routers
 var index = require('./routes/index');
-var single_pressure_switch = require('./routes/single_pressure_switch');
-// var dual_pressure_switch = require('./routes/dual_pressure_switch');
+var single_pressure_switch = require('./routes/single-pressure-switch');
+// var dual_pressure_switch = require('./routes/dual-pressure-switch');
 var users = require('./routes/users');
 
 var app = express();
