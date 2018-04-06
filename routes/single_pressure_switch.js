@@ -84,6 +84,7 @@ router.post('/results', function(req, res, next){
 */
 
 // GET page for single pressure switch data entry point
+// the data entry page includes a list of existing products
 router.get('/data-entry', function(req, res, next){
   // GET all current models
   SinglePressureSwitch
