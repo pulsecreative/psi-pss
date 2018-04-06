@@ -101,12 +101,12 @@ html.no-js(lang='en')
         .row
           .col-sm-10.col-sm-offset-1
             form(action='/single-pressure-switch/delete', method='post')
-              input(id='id', name='id', value='#{product._id}', type='hidden')
+              
               input(type='submit', name='submit', value='Delete This Entry').message-button.text-color-primary
         .row
           .col-sm-10.col-sm-offset-1
             a(href="/single-pressure-switch/data-entry")
-              h3.text-color-primary Back to Data Entry
+              h3.text-color-primary(style='margin-top: 50px;') Back to Data Entry
     // Footer
     footer
       .container
