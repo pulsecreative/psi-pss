@@ -1,0 +1,2 @@
+name,model,LowMaxCutOffPressure,LowMinCutOffPressure,LowMaxDifferential,LowMinDifferential,LowReset,LowMaxPressure,HighMaxCutOffPressure,HighMinCutOffPressure,HighMaxDifferential,HighMinDifferential,HighReset,HighMaxPressure,profile_img,url,certifications
+P830HME Dual Pressure Switch,P830E,0.6,-0.05,0.4,0.1,Auto,1.7,3,1,0.6,0,Manual,3.5,,,"[""CE"",""CQC"",""ROHS""]"

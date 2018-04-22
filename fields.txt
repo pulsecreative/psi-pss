@@ -1,0 +1,17 @@
+name
+model
+LowMaxCutOffPressure
+LowMinCutOffPressure
+LowMaxDifferential
+LowMinDifferential
+LowReset
+LowMaxPressure
+HighMaxCutOffPressure
+HighMinCutOffPressure
+HighMaxDifferential
+HighMinDifferential
+HighReset
+HighMaxPressure
+profile_img
+url
+certifications
