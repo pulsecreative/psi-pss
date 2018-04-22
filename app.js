@@ -8,26 +8,26 @@ var bodyParser = require('body-parser');
 // require database configuration and establish connection
 var db = require('./database');
 
-// require routers
-var index = require('./routes/index');
-var single_pressure_switch = require('./routes/single-pressure-switch');
-// var dual_pressure_switch = require('./routes/dual-pressure-switch');
-
+// create Express app
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// require routes
+var index = require('./routes/index');
+var single_pressure_switch = require('./routes/single-pressure-switch');
+// var dual_pressure_switch = require('./routes/dual-pressure-switch');
+
+// use routes
 app.use('/', index);
 app.use('/single-pressure-switch', single_pressure_switch);
 // app.use('/dual-pressure-switch', dual_pressure_switch);

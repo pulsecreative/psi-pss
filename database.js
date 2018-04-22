@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var dbURI = 'mongodb://fsiadmin:fsindustries@ds033163.mlab.com:33163/fsiproductselectionsoftware';
 
 // BRING IN SCHEMAS & models
-require('./models/single-pressure-switch');
+require('./models/products');
 
 // connect to MongoDB database
 mongoose.connect(dbURI);

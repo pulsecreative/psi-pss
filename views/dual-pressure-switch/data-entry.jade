@@ -1,0 +1,124 @@
+doctype html
+html.no-js(lang='en')
+  head
+    // https://gist.github.com/kevinSuttle/1997924
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='Interested in installing our state-of-the-art HVAC parts into your system? Get in touch with us for a sample or quote today!')
+    meta(name='designer', content='Michelle Yang - Pulse Creative Agency DTLA')
+    meta(name='owner', content='FS Industries, Inc.')
+    
+    title Single Pressure Switch Data Entry | Product Selection Software | FS Industries, Inc.
+    // Place Favicon in the Root Directory
+    link(rel='shortcut icon', href='')
+    // Page/Theme Stylesheets
+    link(rel='stylesheet', type='text/css', href='../css/core/base.css')
+    link(rel='stylesheet', type='text/css', href='../css/core/theme.css')
+    link(rel='stylesheet', type='text/css', href='../css/products.css')
+    // Custom Font
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300', rel='stylesheet', type='text/css')
+  body
+    // Navigation
+    nav.navbar.navbar-theme.navbar-fixed-top
+      .container
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          a.navbar-brand(href='/')
+            img(alt='Fengshen Industries Inc. Logo', src='../img/logo/FSI_logo_white.svg')
+          p#brand-title
+            | FS 
+            span#brand-title-sm Industries
+        // /.navbar-collapse
+      // /.container-fluid
+    // Pager
+    #pager
+      .container
+        .row
+          .col-xs-10.col-xs-offset-1
+            p
+              a Home |
+              |  
+              span.text-color-primary Product Selection Software <b>Data Entry</b>
+    // Title
+    #title
+      .container
+        .row
+          .col-xs-10.col-xs-offset-1
+            h1.text-color-primary Product Selection Software | <b>Data Entry</b>
+              span(style="font-size: 75%; display: block; margin-top: 12px; color: black;") Single Pressure Switches | <b>Data Entry</b>
+    // Container for Info and Form
+    #contact
+      .container
+        .row
+          #data-form.col-sm-7.col-sm-offset-1
+            h3.text-color-primary Please specify new product data:
+              span(style="font-size: 90%; display: block; margin-top: 8px; color: black;") Entry Remarks: please confirm with the management for any questions.
+            br
+            form(action='/single-pressure-switch/post-data-entry', method='post')
+              div.col-xs-6
+                label(for='model', style='margin-top: 0px;') Model:
+                br
+                input(type='text', id='model', name='model', placeholder='e.g. PC6E Single Pressure Switch', style='padding-left: 10px; padding-right: 10px; margin-left: 10px;')
+              div.col-xs-6
+                label(for='MaxCutOffPressure', style='margin-top: 0px;') Max Cut Off Pressure (in MPa):
+                br
+                input(type='text', id='MaxCutOffPressure', name='MaxCutOffPressure', placeholder='e.g. 0.2', style='padding-left: 10px; padding-right: 10px; margin-left: 10px;')
+              div.col-xs-6
+                label(for='MinCutOffPressure', style='margin-top: 30px;') Min Cut Off Pressure (in MPa):
+                br
+                input(type='text', id='MinCutOffPressure', name='MinCutOffPressure', placeholder='e.g. 0.2', style='padding-left: 10px; padding-right: 10px; margin-left: 10px;')
+              div.col-xs-6
+                label(for='MaxDifferential', style='margin-top: 30px;') Max Differential Pressure (in MPa):
+                br
+                input(type='text', id='MaxDifferential', name='MaxDifferential', placeholder='e.g. 0.2', style='padding-left: 10px; padding-right: 10px; margin-left: 10px;')
+              div.col-xs-6
+                label(for='MinDifferential', style='margin-top: 30px;') Min Differential Pressure (in MPa):
+                br
+                input(type='text', id='MinDifferential', name='MinDifferential', placeholder='e.g. 0.2', style='padding-left: 10px; padding-right: 10px; margin-left: 10px;')
+              div.col-xs-6
+                label(for='Reset', style='margin-top: 30px;') Reset Mode:
+                br
+                input(type='text', id='Reset', name='Reset', placeholder='e.g. Auto', style='padding-left: 10px; padding-right: 10px; margin-left: 10px;')
+              div.col-xs-6
+                label(for='MaxPressure', style='margin-top: 30px;') Max Pressure (in MPa):
+                br
+                input(type='text', id='MaxPressure', name='MaxPressure', placeholder='e.g. 0.2', style='padding-left: 10px; padding-right: 10px; margin-left: 10px;')
+              div.col-xs-6
+                label(for='certifications', style='margin-top: 30px;') Certifications: (separate by comma)
+                br
+                input(type='text', id='certifications', name='certifications', placeholder='e.g. UL, CE, CQC, PED', style='padding-left: 10px; padding-right: 10px; margin-left: 10px;')
+              div.col-xs-6
+                label(for='profile_img', style='margin-top: 30px;') Profile Image (in complete URL):
+                br
+                input(type='text', id='profile_img', name='profile_img', placeholder='e.g. http://www.google.com', style='padding-left: 10px; padding-right: 10px; margin-left: 10px; margin-bottom: 30px;')
+              div.col-xs-6
+                label(for='url', style='margin-top: 30px;') Product URL (in complete URL):
+                br
+                input(type='text', id='url', name='url', placeholder='e.g. http://www.google.com', style='padding-left: 10px; padding-right: 10px; margin-left: 10px; margin-bottom: 30px;')
+              input(type='submit', name='submit', value='Submit').message-button.text-color-primary
+          .col-sm-3
+            h3.text-color-primary Existing product(s):
+              span(style="font-size: 90%; display: block; margin-top: 8px; color: black;") 
+            br
+            each model in models
+              a.text-color-primary(href= model.id)
+                p #{model.model}
+    // Footer
+    footer
+      .container
+        .row
+          .col-sm-6.footer-left
+            .row
+              .col-sm-5.col-sm-offset-2
+                h2 Company Info
+                p About Us
+                p Contact Us
+                p Newsboard
+              .col-sm-5
+                h2 General Info
+                p Terms of Service
+                p Shipping Info
+                p Privacy Policy
+          .col-sm-6
+            button.message-button.text-color-primary Send Us a Message!
