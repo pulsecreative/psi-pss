@@ -65,38 +65,35 @@ var SingleTemperatureSwitch = mongoose.model(
     SingleTemperatureSwitchSchema);
 
 /*
-mongoose.model('SingleTemperature').remove({}, function (err) {
+mongoose.model('SingleTemperatureSwitch').remove({}, function (err) {
     if (err) {
         console.log(err);
     }
     console.log('product collection removed');
 
-    var P830E = new DualPressureSwitch({
-        name: "P830E Dual Pressure Switch",
-        model: "P830E",
-        LowMaxCutOffPressure: 0.6,
-        LowMinCutOffPressure: -0.05,
-        LowMaxDifferential: 0.4,
-        LowMinDifferential: 0.1,
-        LowReset: "Auto",
-        LowMaxPressure: 1.7,
-        HighMaxCutOffPressure: 3.0,
-        HighMinCutOffPressure: 1.0,
-        HighMaxDifferential: 0.6,
-        HighMinDifferential: 0.6,
-        HighReset: 'Auto',
-        HighMaxPressure: 3.5,
-        profile_img: '',
-        certifications: ['CE', 'CQC', 'ROHS'],
-        url: ''
+    var TC5E = new SingleTemperatureSwitch({
+        Name: 'TC5E Single Temperature Switch',
+        Model: 'TC5E',
+        TempAdjustRangeMax: -5,
+        TempAdjustRangeMin: -40,
+        TempDiffMax: 10,
+        TempDiffMin: 2,
+        Reset: 'Auto',
+        TempMax: 45,
+        ProfileImage: '',
+        BulbLength: 82,
+        BulbDiameter: 6,
+        Certifications: ['CE', 'CQC', 'RoHS'],
+        URL: ''
     });
 
-    P830E.save((err, product) => {
+    TC5E.save((err, product) => {
         if (err) {
             console.log(err);
         }
-        console.log(product.name + ' saved successfully.');
+        console.log(product.Name + ' saved successfully.');
     });
 });
 */
+
 

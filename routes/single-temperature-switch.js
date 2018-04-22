@@ -56,6 +56,8 @@ router.post('/results', function(req, res, next){
         console.log(err);
       }
       /* Curate query data */
+      console.log(models);
+      
       var query_data = {
         cutin: cutin,
         cutoff: cutoff,
