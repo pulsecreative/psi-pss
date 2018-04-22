@@ -25,12 +25,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // require routes
 var index = require('./routes/index');
 var single_pressure_switch = require('./routes/single-pressure-switch');
-// var dual_pressure_switch = require('./routes/dual-pressure-switch');
+var dual_pressure_switch = require('./routes/dual-pressure-switch');
 
 // use routes
 app.use('/', index);
 app.use('/single-pressure-switch', single_pressure_switch);
-// app.use('/dual-pressure-switch', dual_pressure_switch);
+app.use('/dual-pressure-switch', dual_pressure_switch);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -9,7 +9,7 @@ html.no-js(lang='en')
     meta(name='designer', content='Michelle Yang - Pulse Creative Agency DTLA')
     meta(name='owner', content='FS Industries, Inc.')
     
-    title Single Pressure Switch | Product Selection Software | FS Industries, Inc.
+    title Dual Pressure Switch | Product Selection Software | FS Industries, Inc.
     // Place Favicon in the Root Directory
     link(rel='shortcut icon', href='')
     // Page/Theme Stylesheets
@@ -46,16 +46,17 @@ html.no-js(lang='en')
         .row
           .col-xs-10.col-xs-offset-1
             h1.text-color-primary Product Selection Software
-              span(style="font-size: 75%; display: block; margin-top: 12px; color: black;") Single Pressure Switches
+              span(style="font-size: 75%; display: block; margin-top: 12px; color: black;") Dual Pressure Switches
     // Container for Info and Form
     #products
       .container
         #products-container.row
           .col-sm-10.col-sm-offset-1 
-            h3 The Cut-Off Pressure you entered is #{cutoff_PSI} PSI (#{cutoff_MPA} MPa). The Cut-In Pressure you entered is #{cutin_PSI} PSI (#{cutin_MPA} MPa). 
-            h3 The differential pressure thus is #{differential_PSI} PSI (#{differential_MPA} MPa).
+            h3 The Cut-Off Pressure you entered is #{low_cutoff_PSI} PSI (#{low_cutoff_MPA} MPa) for the low side and #{high_cutoff_PSI} PSI (#{high_cutoff_MPA} MPa) for the high side. 
+            h3 The Cut-In Pressure you entered is #{low_cutin_PSI} PSI (#{low_cutin_MPA} MPa) for the low side and #{high_cutin_PSI} PSI (#{high_cutin_MPA} MPa) for the high side. 
+            h3 The differential pressure thus is #{low_differential_PSI} PSI (#{low_differential_MPA} MPa) for the low side and #{high_differential_PSI} PSI (#{high_differential_MPA} MPa) for the high side.
             br
-            h2.text-color-primary Here is a list of product(s) that match you search criteria:
+            h2.text-color-primary Here is a list of product(s) that match your search criteria:
           #product-info-container.col-sm-10.col-sm-offset-1
             each model in models
               .product-info-box
@@ -71,35 +72,65 @@ html.no-js(lang='en')
                     .row
                       .col-xs-9.col-sm-8.col-md-6.product-info-detail
                         p
-                          b Maximum Cut-Off Pressure
+                          b Low Side Maximum Cut-Off Pressure
                       .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.MaxCutOffPressure}MPa
+                        p #{model.LowMaxCutOffPressure}MPa
                     .row
                       .col-xs-9.col-sm-8.col-md-6.product-info-detail
                         p
-                          b Minimum Cut-Off Pressure
+                          b Low Side Minimum Cut-Off Pressure
                       .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.MinCutOffPressure}MPa
+                        p #{model.LowMinCutOffPressure}MPa
                     .row
                       .col-xs-9.col-sm-8.col-md-6.product-info-detail
                         p
-                          b Maximum Differential Pressure
+                          b Low Side Maximum Differential Pressure
                       .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.MaxDifferential}Mpa
+                        p #{model.LowMaxDifferential}Mpa
                     .row
                       .col-xs-9.col-sm-8.col-md-6.product-info-detail
                         p
-                          b Minimum Differential Pressure
+                          b Low Side Minimum Differential Pressure
                       .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.MinDifferential}MPa
+                        p #{model.LowMinDifferential}MPa
                     .row
                       .col-xs-9.col-sm-8.col-md-6.product-info-detail
                         p
-                          b Reset Type
+                          b Low Side Reset Type
                       .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.Reset}
+                        p #{model.LowReset}
+                    .row
+                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
+                        p
+                          b High Side Maximum Cut-Off Pressure
+                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
+                        p #{model.HighMaxCutOffPressure}MPa
+                    .row
+                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
+                        p
+                          b High Side Maximum Cut-Off Pressure
+                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
+                        p #{model.HighMinCutOffPressure}MPa
+                    .row
+                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
+                        p
+                          b High Side Maximum Differential Pressure
+                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
+                        p #{model.HighMaxDifferential}Mpa
+                    .row
+                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
+                        p
+                          b High Side Minimum Differential Pressure
+                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
+                        p #{model.HighMinDifferential}MPa
+                    .row
+                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
+                        p
+                          b High Side Reset Type
+                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
+                        p #{model.HighReset}
 
-          a(href="/single_pressure_switch/")
+          a(href="/dual-pressure-switch/")
             button.message-button(style="background-color: #e60013; color: white; font-weight: 800;") New Search
     // Footer
     footer

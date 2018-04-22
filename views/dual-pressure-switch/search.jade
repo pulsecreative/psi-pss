@@ -9,7 +9,7 @@ html.no-js(lang='en')
     meta(name='designer', content='Michelle Yang - Pulse Creative Agency DTLA')
     meta(name='owner', content='FS Industries, Inc.')
     
-    title Single Pressure Switch | Product Selection Software | FS Industries, Inc.
+    title Dual Pressure Switch | Product Selection Software | FS Industries, Inc.
     // Place Favicon in the Root Directory
     link(rel='shortcut icon', href='')
     // Page/Theme Stylesheets
@@ -46,7 +46,7 @@ html.no-js(lang='en')
         .row
           .col-xs-10.col-xs-offset-1
             h1.text-color-primary Product Selection Software
-              span(style="font-size: 75%; display: block; margin-top: 12px; color: black;") Single Pressure Switches
+              span(style="font-size: 75%; display: block; margin-top: 12px; color: black;") Dual Pressure Switches
     // Container for Info and Form
     #contact
       .container
@@ -55,13 +55,19 @@ html.no-js(lang='en')
             h3.text-color-primary Please specify the cut-off and cut-in pressure. 
               span(style="font-size: 90%; display: block; margin-top: 8px; color: black;") (Cut-in Pressure must be lower than cut-off pressure)
             br
-            form(action='/single-pressure-switch/results', method='post')
+            form(action='/dual-pressure-switch/results', method='post')
               div.col-xs-6
-                label(for='cutoff') Cut Off Pressure (in PSI):  
-                input(type='text', id='cutoff', name='cutoff', placeholder='e.g. 400', style='padding-left: 10px; padding-right: 10px; margin-left: 10px')
+                label(for='low_cutoff') Cut Off Pressure for Low Pressure Side (in PSI):  
+                input(type='text', id='low_cutoff', name='low_cutoff', placeholder='e.g. 400', style='padding-left: 10px; padding-right: 10px; margin-left: 10px')
               div.col-xs-6
-                label(for='cutin') Cut In Pressure (in PSI):  
-                input(type='text', id='cutin', name='cutin', placeholder='e.g. 300', style='padding-left: 10px; padding-right: 10px; margin-left: 10px')
+                label(for='low_cutin') Cut In Pressure for Low Pressure Side (in PSI):  
+                input(type='text', id='low_cutin', name='low_cutin', placeholder='e.g. 300', style='padding-left: 10px; padding-right: 10px; margin-left: 10px')
+              div.col-xs-6
+                label(for='high_cutoff') Cut Off Pressure for High Pressure Side (in PSI):  
+                input(type='text', id='high_cutoff', name='high_cutoff', placeholder='e.g. 400', style='padding-left: 10px; padding-right: 10px; margin-left: 10px')
+              div.col-xs-6
+                label(for='high_cutin') Cut In Pressure for High Pressure Side (in PSI):  
+                input(type='text', id='high_cutin', name='high_cutin', placeholder='e.g. 300', style='padding-left: 10px; padding-right: 10px; margin-left: 10px')
               input(type='submit', name='submit', value='Submit').message-button.text-color-primary
     // Footer
     footer

@@ -55,7 +55,7 @@ html.no-js(lang='en')
             h3 The Cut-Off Pressure you entered is #{cutoff_PSI} PSI (#{cutoff_MPA} MPa). The Cut-In Pressure you entered is #{cutin_PSI} PSI (#{cutin_MPA} MPa). 
             h3 The differential pressure thus is #{differential_PSI} PSI (#{differential_MPA} MPa).
             br
-            h2.text-color-primary Here is a list of product(s) that match you search criteria:
+            h2.text-color-primary Here is a list of product(s) that match your search criteria:
           #product-info-container.col-sm-10.col-sm-offset-1
             each model in models
               .product-info-box
@@ -99,7 +99,7 @@ html.no-js(lang='en')
                       .col-xs-3.col-sm-4.col-md-6.product-info-detail
                         p #{model.Reset}
 
-          a(href="/single_pressure_switch/")
+          a(href="/single-pressure-switch/")
             button.message-button(style="background-color: #e60013; color: white; font-weight: 800;") New Search
     // Footer
     footer

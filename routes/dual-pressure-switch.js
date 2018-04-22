@@ -30,7 +30,7 @@ function round(value, exp) {
 ==
 */
 
-/* GET Page for Single Pressure Switch Product Selection Software. */
+/* GET Page for Dual Pressure Switch Product Selection Software. */
 router.get('/', function(req, res, next) {
   res.render('dual-pressure-switch/search', {});
 });
@@ -54,15 +54,20 @@ router.post('/results', function(req, res, next){
     high_cutin_MPA = round(high_cutin_MPA, 3);
 
     /* 3. Subtract cut-in pressure from cut-out pressure -> get LOW differential */
-    var differential_PSI = cutoff_PSI - cutin_PSI;
-    var differential_MPA = cutoff_MPA - cutin_MPA;
-    differential_MPA = round(differential_MPA, 3);
+    var low_differential_PSI = low_cutoff_PSI - low_cutin_PSI;
+    var low_differential_MPA = low_cutoff_MPA - low_cutin_MPA;
+    low_differential_MPA = round(low_differential_MPA, 3);
 
     /* 4. Subtract cut-in pressure from cut-out pressure -> get HIGH differential */
     var high_differential_PSI = high_cutoff_PSI - high_cutin_PSI;
     var high_differential_MPA = high_cutoff_MPA - high_cutin_MPA;
     high_differential_MPA = round(high_differential_MPA, 3);
 
+    console.log('Low Cut Off Pressure in MPA: ', low_cutoff_MPA);
+    console.log('High Cut Off Pressure in MPA: ', high_cutoff_MPA);
+    console.log('Low Differential Pressure in MPA: ', low_differential_MPA);
+    console.log('High Differential Pressure in MPA: ', high_differential_MPA);
+    
     /* 5. Do a query against database based on the parameters */
     DualPressureSwitch
     .where("LowMaxCutOffPressure").gte(low_cutoff_MPA)
@@ -103,7 +108,7 @@ router.post('/results', function(req, res, next){
 ==
 == Data Entry
 ==
-*/
+
 
 // GET page for single pressure switch data entry point
 // the data entry page includes a list of existing products
@@ -157,7 +162,7 @@ router.post('/post-data-entry', function(req, res, next){
 ==
 == Data Maintenance
 ==
-*/
+
 
 // GET page for checking individual product data.
 router.get('/:id', function (req, res, next) {
