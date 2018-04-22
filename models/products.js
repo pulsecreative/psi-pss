@@ -16,9 +16,7 @@ var singlePressureSwitchSchema = new Schema({
     url: String
 });
 
-var SinglePressureSwitch = mongoose.model(
-    'SinglePressureSwitch', 
-    singlePressureSwitchSchema);
+var SinglePressureSwitch = mongoose.model('SinglePressureSwitch', singlePressureSwitchSchema);
 
 // Product Schema for Dual Pressure Switches
 var DualPressureSwitchSchema = new Schema({
@@ -45,8 +43,29 @@ var DualPressureSwitch = mongoose.model(
     'DualPressureSwitch', 
     DualPressureSwitchSchema);
 
+// Product Schema for Single Temperature Switches
+var SingleTemperatureSwitchSchema = new Schema({
+    Name: String,
+    Model: String,
+    TempAdjustRangeMax: Number,
+    TempAdjustRangeMin: Number,
+    TempDiffMax: Number,
+    TempDiffMin: Number,
+    Reset: String,
+    TempMax: Number,
+    ProfileImage: String,
+    BulbLength: Number,
+    BulbDiameter: Number,
+    Certifications: [String],
+    URL: String
+});
+
+var SingleTemperatureSwitch = mongoose.model(
+    'SingleTemperatureSwitch', 
+    SingleTemperatureSwitchSchema);
+
 /*
-mongoose.model('DualPressureSwitch').remove({}, function (err) {
+mongoose.model('SingleTemperature').remove({}, function (err) {
     if (err) {
         console.log(err);
     }
