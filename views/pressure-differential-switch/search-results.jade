@@ -9,7 +9,7 @@ html.no-js(lang='en')
     meta(name='designer', content='Michelle Yang - Pulse Creative Agency DTLA')
     meta(name='owner', content='FS Industries, Inc.')
     
-    title Dual Temperature Switch | Product Selection Software | FS Industries, Inc.
+    title Pressure Differential Switch | Product Selection Software | FS Industries, Inc.
     // Place Favicon in the Root Directory
     link(rel='shortcut icon', href='')
     // Page/Theme Stylesheets
@@ -46,15 +46,13 @@ html.no-js(lang='en')
         .row
           .col-xs-10.col-xs-offset-1
             h1.text-color-primary Product Selection Software
-              span(style="font-size: 75%; display: block; margin-top: 12px; color: black;") Dual Temperature Switches
+              span(style="font-size: 75%; display: block; margin-top: 12px; color: black;") Pressure Differential Switches
     // Container for Info and Form
     #products
       .container
         #products-container.row
           .col-sm-10.col-sm-offset-1 
-            h3 The Low Temperature Side Cut-Off Temperature you entered is #{low_cutoff} degrees celcius; Cut-In Temperature you entered is #{low_cutin} degrees celcius. 
-            h3 The High Temperature Side Cut-Off Temperature you entered is #{high_cutoff} degrees celcius; Cut-In Temperature you entered is #{high_cutin} degrees celcius. 
-            h3 The temperature differential thus is #{low_differential} degrees celcius for the low temperature end and #{high_differential} degrees celcius for the high temperature end.
+            h3 The Cut-Off Pressure Differential you entered is #{cutoff_PSI} PSI (#{cutoff_MPA} MPa).
             br
             h2.text-color-primary Here is a list of product(s) that match your search criteria:
           #product-info-container.col-sm-10.col-sm-offset-1
@@ -72,53 +70,35 @@ html.no-js(lang='en')
                     .row
                       .col-xs-9.col-sm-8.col-md-6.product-info-detail
                         p
-                          b Low Temperature Side Adjustment Range Max
+                          b Pressure Differential Adjustment Range Max
                       .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.LowTempAdjustRangeMax}℃
+                        p #{model.DifferentialAdjustRangeMax}PSI
                     .row
                       .col-xs-9.col-sm-8.col-md-6.product-info-detail
                         p
-                          b Low Temperature Side Adjustment Range Max
+                          b Pressure Differential Adjustment Range Max
                       .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.LowTempAdjustRangeMin}℃
+                        p #{model.TempAdjustRangeMin}PSI
                     .row
                       .col-xs-9.col-sm-8.col-md-6.product-info-detail
                         p
-                          b Low Temperature Side Differential Max
+                          b Factory Setting
                       .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.LowTempDiffMax}℃
+                        p #{model.FactorySetting}PSI
                     .row
                       .col-xs-9.col-sm-8.col-md-6.product-info-detail
                         p
-                          b Low Temperature Side Differential Min
+                          b Maximum Working Pressure
                       .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.LowTempDiffMin}℃
+                        p #{model.MaxPressure}PSI
                     .row
                       .col-xs-9.col-sm-8.col-md-6.product-info-detail
                         p
-                          b High Temperature Side Adjustment Range Max
+                          b Delay Time
                       .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.HighTempAdjustRangeMax}℃
-                    .row
-                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
-                        p
-                          b High Temperature Side Adjustment Range Max
-                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.HighTempAdjustRangeMin}℃
-                    .row
-                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
-                        p
-                          b High Temperature Side Differential Max
-                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.HighTempDiffMax}℃
-                    .row
-                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
-                        p
-                          b High Temperature Side Differential Min
-                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.HighTempDiffMin}℃
+                        p #{model.DelayTime} Sec.
 
-          a(href="/dual-temperature-switch/")
+          a(href="/pressure-differential-switch/")
             button.message-button(style="background-color: #e60013; color: white; font-weight: 800;") New Search
     // Footer
     footer
