@@ -64,6 +64,31 @@ var SingleTemperatureSwitch = mongoose.model(
     'SingleTemperatureSwitch', 
     SingleTemperatureSwitchSchema);
 
+// Product Schema for Dual Temperature Switches
+var DualTemperatureSwitchSchema = new Schema({
+    Name: String,
+    Model: String,
+    LowTempAdjustRangeMax: Number,
+    LowTempAdjustRangeMin: Number,
+    LowTempDiffMax: Number,
+    LowTempDiffMin: Number,
+    LowReset: String,
+    LowTempMax: Number,
+    HighTempAdjustRangeMax: Number,
+    HighTempAdjustRangeMin: Number,
+    HighTempDiffMax: Number,
+    HighTempDiffMin: Number,
+    HighReset: String,
+    HighTempMax: Number,
+    ProfileImage: String,
+    Certifications: [String],
+    URL: String
+});
+
+var DualTemperatureSwitch = mongoose.model(
+    'DualTemperatureSwitch', 
+    DualTemperatureSwitchSchema);
+
 /*
 mongoose.model('SingleTemperatureSwitch').remove({}, function (err) {
     if (err) {
