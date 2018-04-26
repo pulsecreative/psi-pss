@@ -108,6 +108,25 @@ var PressureDifferentialSwitch = mongoose.model(
     'PressureDifferentialSwitch', 
     PressureDifferentialSwitchSchema);
 
+// Product Schema for Dual Temperature Switches
+var TemperatureDifferentialSwitchSchema = new Schema({
+    Name: String,
+    Model: String,
+    DifferentialAdjustRangeMax: Number,
+    DifferentialAdjustRangeMin: Number,
+    SwitchDifferentialMax: Number,
+    TempRangeMax: Number,
+    TempRangeMin: Number,
+    MaxTemp: Number,
+    ProfileImage: String,
+    Certifications: [String],
+    URL: String
+});
+
+var TemperatureDifferentialSwitch = mongoose.model(
+    'TemperatureDifferentialSwitch', 
+    TemperatureDifferentialSwitchSchema);
+
 /*
 mongoose.model('SingleTemperatureSwitch').remove({}, function (err) {
     if (err) {
