@@ -40,7 +40,7 @@ router.get('/', function(req, res, next) {
 /* Process Submitted Query Form; Return Search Results */
 router.post('/results', function(req, res, next){
     /* 1. Extract submitted data */
-    var condenser_pressure = req.body.condenser_pressure / 145;
+    var condenser_pressure = round(req.body.condenser_pressure / 145, 3);
 
     /* 2. Do a query against database based on the parameters */
     PressureControlledWaterValve

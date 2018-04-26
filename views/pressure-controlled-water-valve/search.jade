@@ -55,9 +55,9 @@ html.no-js(lang='en')
             h3.text-color-primary Please specify the condenser pressure in PSI. 
             br
             form(action='/pressure-controlled-water-valve/results', method='post')
-              div.col-xs-6
+              div.col-xs-12
                 label(for='condenser_pressure') Condenser Pressure (in PSI):  
-                input(type='text', id='condenser_pressure', name='condenser_pressure', placeholder='e.g. 80', style='padding-left: 10px; padding-right: 10px; margin-left: 10px')
+                input(type='text', id='condenser_pressure', name='condenser_pressure', placeholder='e.g. 150', style='padding-left: 10px; padding-right: 10px; margin-left: 10px')
               input(type='submit', name='submit', value='Submit').message-button.text-color-primary
     // Footer
     footer
