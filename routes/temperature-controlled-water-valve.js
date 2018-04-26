@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var mongoose = require('mongoose');
-var PressureControlledWaterValve = mongoose.model('PressureControlledWaterValve');
+var TemperatureControlledWaterValve = mongoose.model('TemperatureControlledWaterValve');
 
 /* Round method */
 function round(value, exp) {
@@ -30,20 +30,22 @@ function round(value, exp) {
 ==
 */
 
-/* GET Page for Pressure Controlled Water Valve Product Selection Software. */
+/* GET Page for Temperature Controlled Water Valve Product Selection Software. */
 router.get('/', function(req, res, next) {
-  res.render('pressure-controlled-water-valve/search', {});
+  console.log('temperature-controlled-water-valve');
+  
+  res.render('temperature-controlled-water-valve/search', {});
 });
 
 /* Process Submitted Query Form; Return Search Results */
 router.post('/results', function(req, res, next){
     /* 1. Extract submitted data */
-    var condenser_pressure = round(req.body.condenser_pressure / 145, 3);
+    var temperature = req.body.temperature;
 
     /* 2. Do a query against database based on the parameters */
-    PressureControlledWaterValve
-    .where("CondenserPressureAdjustRangeMax").gte(condenser_pressure)
-    .where("CondenserPressureAdjustRangeMin").lte(condenser_pressure)
+    TemperatureControlledWaterValve
+    .where("TempAdjustRangeMax").gte(temperature)
+    .where("TempAdjustRangeMin").lte(temperature)
     .sort('model')
     .exec(function(err, models) {
       if (err) {
@@ -53,11 +55,11 @@ router.post('/results', function(req, res, next){
       console.log(models);
       
       var query_data = {
-        condenser_pressure: condenser_pressure,
+        temperature: temperature,
         models: models
       };
       /* Return search results */
-      res.render('pressure-controlled-water-valve/search-results', query_data);
+      res.render('temperature-controlled-water-valve/search-results', query_data);
     });
 });
 

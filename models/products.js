@@ -168,6 +168,25 @@ var PressureControlledWaterValve = mongoose.model(
     'PressureControlledWaterValve', 
     PressureControlledWaterValveSchema);
 
+// Product Schema for Temperature Controlled Water Valve
+var TemperatureControlledWaterValveSchema = new Schema({
+    Name: String,
+    Model: String,
+    TempAdjustRangeMax: Number,
+    TempAdjustRangeMin: Number,
+    MaxTemp: Number,
+    FactorySettingOpeningTemperature: Number,
+    MaxMediumTemp: Number,
+    MaxPress: Number,
+    ProfileImage: String,
+    Certifications: [String],
+    URL: String
+});
+
+var TemperatureControlledWaterValve = mongoose.model(
+    'TemperatureControlledWaterValve', 
+    TemperatureControlledWaterValveSchema);
+
 /*
 mongoose.model('SingleTemperatureSwitch').remove({}, function (err) {
     if (err) {

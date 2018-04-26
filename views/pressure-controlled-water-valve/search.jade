@@ -52,11 +52,11 @@ html.no-js(lang='en')
       .container
         .row
           #data-form.col-sm-10.col-sm-offset-1
-            h3.text-color-primary Please specify the condenser pressure in PSI. 
+            h3.text-color-primary Please specify your desired Opening Pressure in PSI. 
             br
             form(action='/pressure-controlled-water-valve/results', method='post')
               div.col-xs-12
-                label(for='condenser_pressure') Condenser Pressure (in PSI):  
+                label(for='condenser_pressure') Opening Pressure (in PSI):  
                 input(type='text', id='condenser_pressure', name='condenser_pressure', placeholder='e.g. 150', style='padding-left: 10px; padding-right: 10px; margin-left: 10px')
               input(type='submit', name='submit', value='Submit').message-button.text-color-primary
     // Footer
