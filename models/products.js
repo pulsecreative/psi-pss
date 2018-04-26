@@ -127,6 +127,47 @@ var TemperatureDifferentialSwitch = mongoose.model(
     'TemperatureDifferentialSwitch', 
     TemperatureDifferentialSwitchSchema);
 
+// Product Schema for Oil Flow Switches
+var OilFlowSwitchSchema = new Schema({
+    Name: String,
+    Model: String,
+    IncreasingFlowMax: Number,
+    IncreasingFlowMin: Number,
+    DecreasingFlowMax: Number,
+    DecreasingFlowMin: Number,
+    ConnectionSize: String,
+    Material: String,
+    ProfileImage: String,
+    Certifications: [String],
+    URL: String
+});
+
+var OilFlowSwitch = mongoose.model(
+    'OilFlowSwitch', 
+    OilFlowSwitchSchema);
+
+// Product Schema for Pressure Controlled Water Valve
+var PressureControlledWaterValveSchema = new Schema({
+    Name: String,
+    Model: String,
+    CondenserPressureAdjustRangeMax: Number,
+    CondenserPressureAdjustRangeMin: Number,
+    CondenserWorkingPressureMax: Number,
+    CondenserTestingPressureMax: Number,
+    LiquidMedium: String,
+    LiquidWorkingPressureMax: Number,
+    LiquidTestingPressureMax: Number,
+    FactorySettingOpeningPressure: Number,
+    Kv: Number,
+    ProfileImage: String,
+    Certifications: [String],
+    URL: String
+});
+
+var PressureControlledWaterValve = mongoose.model(
+    'PressureControlledWaterValve', 
+    PressureControlledWaterValveSchema);
+
 /*
 mongoose.model('SingleTemperatureSwitch').remove({}, function (err) {
     if (err) {
