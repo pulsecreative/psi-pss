@@ -1,0 +1,120 @@
+doctype html
+html.no-js(lang='en')
+  head
+    // https://gist.github.com/kevinSuttle/1997924
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='Interested in installing our state-of-the-art HVAC parts into your system? Get in touch with us for a sample or quote today!')
+    meta(name='designer', content='Michelle Yang - Pulse Creative Agency DTLA')
+    meta(name='owner', content='FS Industries, Inc.')
+    
+    title Pressure Controlled Water Valve | Product Selection Software | FS Industries, Inc.
+    // Place Favicon in the Root Directory
+    link(rel='shortcut icon', href='')
+    // Page/Theme Stylesheets
+    link(rel='stylesheet', type='text/css', href='../css/core/base.css')
+    link(rel='stylesheet', type='text/css', href='../css/core/theme.css')
+    link(rel='stylesheet', type='text/css', href='../css/products.css')
+    // Custom Font
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300', rel='stylesheet', type='text/css')
+  body
+    // Navigation
+    nav.navbar.navbar-theme.navbar-fixed-top
+      .container
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          a.navbar-brand(href='/')
+            img(alt='Fengshen Industries Inc. Logo', src='../img/logo/FSI_logo_white.svg')
+          p#brand-title
+            | FS 
+            span#brand-title-sm Industries
+        // /.navbar-collapse
+      // /.container-fluid
+    // Pager
+    #pager
+      .container
+        .row
+          .col-xs-10.col-xs-offset-1
+            p
+              a Home |
+              |  
+              span.text-color-primary Product Selection Software
+    // Title
+    #title
+      .container
+        .row
+          .col-xs-10.col-xs-offset-1
+            h1.text-color-primary Product Selection Software
+              span(style="font-size: 75%; display: block; margin-top: 12px; color: black;") Pressure Controlled Water Valve
+    // Container for Info and Form
+    #products
+      .container
+        #products-container.row
+          .col-sm-10.col-sm-offset-1 
+            h3 The Condenser Pressure you entered is #{condenser_pressure} MPa.
+            br
+            h2.text-color-primary Here is a list of product(s) that match your search criteria:
+          #product-info-container.col-sm-10.col-sm-offset-1
+            each model in models
+              .product-info-box
+                .row
+                  .col-sm-4 
+                    a(href=model.URL)
+                      img.product-thumbnail(src=model.ProfileImage)
+                  .col-sm-8
+                    .row
+                      .col-xs-12.product-info-detail
+                        a(href=model.URL)
+                          h2.text-color-primary=model.Name
+                    .row
+                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
+                        p
+                          b Condenser Side Pressure Adjustment Range (MPa)
+                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
+                        p #{model.CondenserPressureAdjustRangeMin} ~ #{model.CondenserPressureAdjustRangeMax}
+                    .row
+                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
+                        p
+                          b Maximum Working Pressure (MPa)
+                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
+                        p #{model.CondenserWorkingPressureMax}
+                    .row
+                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
+                        p
+                          b Maximum Testing Pressure (MPa)
+                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
+                        p #{model.CondenserTestingPressureMax}
+                    .row
+                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
+                        p
+                          b Factory Setting Opening Pressure (MPa)
+                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
+                        p #{model.FactorySettingOpeningPressure}
+                    .row
+                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
+                        p
+                          b Kv Value (m3/h)
+                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
+                        p #{model.Kv}
+
+          a(href="/pressure-controlled-water-valve/")
+            button.message-button(style="background-color: #e60013; color: white; font-weight: 800;") New Search
+    // Footer
+    footer
+      .container
+        .row
+          .col-sm-6.footer-left
+            .row
+              .col-sm-5.col-sm-offset-2
+                h2 Company Info
+                p About Us
+                p Contact Us
+                p Newsboard
+              .col-sm-5
+                h2 General Info
+                p Terms of Service
+                p Shipping Info
+                p Privacy Policy
+          .col-sm-6
+            button.message-button.text-color-primary Send Us a Message!

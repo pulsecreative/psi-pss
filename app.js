@@ -31,6 +31,7 @@ var dual_temperature_switch = require('./routes/dual-temperature-switch');
 var pressure_differential_switch = require('./routes/pressure-differential-switch');
 var temperature_differential_switch = require('./routes/temperature-differential-switch');
 var oil_flow_switch = require('./routes/oil-flow-switch');
+var pressure_controlled_water_valve = require('./routes/pressure-controlled-water-valve');
 
 // use routes
 app.use('/', index);
@@ -41,6 +42,8 @@ app.use('/dual-temperature-switch', dual_temperature_switch);
 app.use('/pressure-differential-switch', pressure_differential_switch);
 app.use('/temperature-differential-switch', temperature_differential_switch);
 app.use('/oil-flow-switch', oil_flow_switch);
+app.use('/pressure-controlled-water-valve', pressure_controlled_water_valve);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

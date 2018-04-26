@@ -9,13 +9,13 @@ html.no-js(lang='en')
     meta(name='designer', content='Michelle Yang - Pulse Creative Agency DTLA')
     meta(name='owner', content='FS Industries, Inc.')
     
-    title Product Selection Software | FS Industries, Inc.
+    title Pressure Controlled Water Valve | Product Selection Software | FS Industries, Inc.
     // Place Favicon in the Root Directory
     link(rel='shortcut icon', href='')
     // Page/Theme Stylesheets
-    link(rel='stylesheet', type='text/css', href='css/core/base.css')
-    link(rel='stylesheet', type='text/css', href='css/core/theme.css')
-    link(rel='stylesheet', type='text/css', href='css/contact.css')
+    link(rel='stylesheet', type='text/css', href='../css/core/base.css')
+    link(rel='stylesheet', type='text/css', href='../css/core/theme.css')
+    link(rel='stylesheet', type='text/css', href='../css/products.css')
     // Custom Font
     link(href='https://fonts.googleapis.com/css?family=Open+Sans:300', rel='stylesheet', type='text/css')
   body
@@ -25,7 +25,7 @@ html.no-js(lang='en')
         // Brand and toggle get grouped for better mobile display
         .navbar-header
           a.navbar-brand(href='/')
-            img(alt='Fengshen Industries Inc. Logo', src='img/logo/FSI_logo_white.svg')
+            img(alt='Fengshen Industries Inc. Logo', src='../img/logo/FSI_logo_white.svg')
           p#brand-title
             | FS 
             span#brand-title-sm Industries
@@ -46,37 +46,19 @@ html.no-js(lang='en')
         .row
           .col-xs-10.col-xs-offset-1
             h1.text-color-primary Product Selection Software
+              span(style="font-size: 75%; display: block; margin-top: 12px; color: black;") Pressure Controlled Water Valve
     // Container for Info and Form
     #contact
       .container
         .row
-          #contact-info.col-sm-5.col-sm-offset-1
-            a.text-color-primary(href='/single-pressure-switch') 
-              h1 Single Pressure Switches
-          #contact-form.col-sm-5
-            a.text-color-primary(href='/dual-pressure-switch') 
-              h1 Dual Pressure Switches
-        .row
-          #contact-info.col-sm-5.col-sm-offset-1
-            a.text-color-primary(href='/single-temperature-switch') 
-              h1 Single Temperature Switches
-          #contact-form.col-sm-5
-            a.text-color-primary(href='/dual-temperature-switch') 
-              h1 Dual Temperature Switches
-        .row
-          #contact-info.col-sm-5.col-sm-offset-1
-            a.text-color-primary(href='/pressure-differential-switch') 
-              h1 Pressure Differential Switches
-          #contact-form.col-sm-5
-            a.text-color-primary(href='/temperature-differential-switch') 
-              h1 Temperature Differential Switches
-        .row
-          #contact-info.col-sm-5.col-sm-offset-1
-            a.text-color-primary(href='/oil-flow-switch') 
-              h1 Oil Pressure Switches
-          #contact-form.col-sm-5
-            a.text-color-primary(href='/pressure-controlled-water-valve') 
-              h1 Pressure Controlled Water Valves
+          #data-form.col-sm-10.col-sm-offset-1
+            h3.text-color-primary Please specify the condenser pressure in PSI. 
+            br
+            form(action='/pressure-controlled-water-valve/results', method='post')
+              div.col-xs-6
+                label(for='condenser_pressure') Condenser Pressure (in PSI):  
+                input(type='text', id='condenser_pressure', name='condenser_pressure', placeholder='e.g. 80', style='padding-left: 10px; padding-right: 10px; margin-left: 10px')
+              input(type='submit', name='submit', value='Submit').message-button.text-color-primary
     // Footer
     footer
       .container
