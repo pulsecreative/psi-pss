@@ -294,6 +294,97 @@ var ASVSolenoidValve = mongoose.model(
     'ASVSolenoidValve', 
     ASVSolenoidValveSchema);
 
+// Product Schema for K-ASTV Series Expansion Valve
+var KASTVExpansionValveSchema = new Schema({
+    Name: String,
+    Model: String,
+    Refrigerant: String,
+    NominalCapacityKW: Number,
+    NominalCapacityTon: Number,
+    InletINCH: Number,
+    InletMM: Number,
+    OutletINCH: Number,
+    OutletMM: Number,
+    CapillaryLength: Number,
+    ProfileImage: String,
+    Certifications: [String],
+    URL: String
+});
+
+var KASTVExpansionValve = mongoose.model(
+    'KASTVExpansionValve', 
+    KASTVExpansionValveSchema);
+
+// Product Schema for K-BWTV Series Expansion Valve
+var KBWTVExpansionValveSchema = new Schema({
+    Name: String,
+    Model: String,
+    Refrigerant: String,
+    NominalCapacityKW: Number,
+    NominalCapacityTon: Number,
+    InletINCH: Number,
+    InletMM: Number,
+    OutletINCH: Number,
+    OutletMM: Number,
+    CapillaryLength: Number,
+    ProfileImage: String,
+    Certifications: [String],
+    URL: String
+});
+
+var KBWTVExpansionValve = mongoose.model(
+    'KBWTVExpansionValve', 
+    KBWTVExpansionValveSchema);
+
+// Product Schema for K-BWTV Series Expansion Valve
+var ETVExpansionValveSchema = new Schema({
+    Name: String,
+    Model: String,
+    Refrigerant: String,
+    NominalCapacityKW: Number,
+    NominalCapacityTon: Number,
+    InletINCH: Number,
+    InletMM: Number,
+    OutletINCH: Number,
+    OutletMM: Number,
+    CapillaryLength: Number,
+    ProfileImage: String,
+    Certifications: [String],
+    URL: String
+});
+
+var ETVExpansionValve = mongoose.model(
+    'ETVExpansionValve', 
+    ETVExpansionValveSchema);
+
+// Product Schema for SS Series Bi-Flow Expansion Valve
+var SSTVExpansionValveSchema = new Schema({
+    Name: String,
+    Model: String,
+    Refrigerant: String,
+    NominalCapacityKW: Number,
+    NominalCapacityTon: Number,
+    InletINCH: Number,
+    InletMM: Number,
+    OutletINCH: Number,
+    OutletMM: Number,
+    CapillaryLength: Number,
+    ProfileImage: String,
+    Certifications: [String],
+    URL: String
+});
+
+var SSTVExpansionValve = mongoose.model(
+    'SSTVExpansionValve', 
+    SSTVExpansionValveSchema);
+
+
+
+
+
+
+
+
 /*
 mongoose.model('SingleTemperatureSwitch').remove({}, function (err) {
     if (err) {
