@@ -187,6 +187,30 @@ var TemperatureControlledWaterValve = mongoose.model(
     'TemperatureControlledWaterValve', 
     TemperatureControlledWaterValveSchema);
 
+// Product Schema for SV Series Solenoid Valve
+var SVSolenoidValveSchema = new Schema({
+    Name: String,
+    Model: String,
+    ModelR410a: String,
+    ConnectionForm: String,
+    ConnectionMM: Number,
+    ConnectionINCH: String,
+    Kv: Number,
+    OpeningDifferentialPressureMin: Number,
+    OpeningDifferentialPressureMaxAC: Number,
+    OpeningDifferentialPressureMaxDC: Number,
+    Length: Number,
+    Width: Number,
+    Height: Number,
+    ProfileImage: String,
+    Certifications: [String],
+    URL: String
+});
+
+var SVSolenoidValve = mongoose.model(
+    'SVSolenoidValve', 
+    SVSolenoidValveSchema);
+
 /*
 mongoose.model('SingleTemperatureSwitch').remove({}, function (err) {
     if (err) {
