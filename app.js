@@ -34,6 +34,10 @@ var oil_flow_switch = require('./routes/oil-flow-switch');
 var pressure_controlled_water_valve = require('./routes/pressure-controlled-water-valve');
 var temperature_controlled_water_valve = require('./routes/temperature-controlled-water-valve');
 var sv_solenoid_valve = require('./routes/sv-solenoid-valve');
+var ssv_solenoid_valve = require('./routes/ssv-solenoid-valve');
+var svg_solenoid_valve = require('./routes/svg-solenoid-valve');
+var nsv_solenoid_valve = require('./routes/nsv-solenoid-valve');
+var asv_solenoid_valve = require('./routes/asv-solenoid-valve');
 
 // use routes
 app.use('/', index);
@@ -47,6 +51,10 @@ app.use('/oil-flow-switch', oil_flow_switch);
 app.use('/pressure-controlled-water-valve', pressure_controlled_water_valve);
 app.use('/temperature-controlled-water-valve', temperature_controlled_water_valve);
 app.use('/sv-solenoid-valve', sv_solenoid_valve);
+app.use('/ssv-solenoid-valve', ssv_solenoid_valve);
+app.use('/svg-solenoid-valve', svg_solenoid_valve);
+app.use('/nsv-solenoid-valve', nsv_solenoid_valve);
+app.use('/asv-solenoid-valve', asv_solenoid_valve);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

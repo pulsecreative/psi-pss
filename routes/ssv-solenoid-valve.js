@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var mongoose = require('mongoose');
-var SVSolenoidValve = mongoose.model('SVSolenoidValve');
+var SSVSolenoidValve = mongoose.model('SSVSolenoidValve');
 
 /* Round method */
 function round(value, exp) {
@@ -30,9 +30,9 @@ function round(value, exp) {
 ==
 */
 
-/* GET Page for SV Series Solenoid Valve Product Selection Software. */
+/* GET Page for SSV Series Solenoid Valve Product Selection Software. */
 router.get('/', function(req, res, next) {
-  res.render('sv-solenoid-valve/search', {});
+  res.render('ssv-solenoid-valve/search', {});
 });
 
 /* Process Submitted Query Form; Return Search Results */
@@ -42,7 +42,7 @@ router.post('/results', function(req, res, next){
       var connection_size_mm = connection_size * 254;
 
     /* 2. Do a query against database based on the parameters */
-    SVSolenoidValve
+    SSVSolenoidValve
     .where("ConnectionMM").gte(connection_size_mm * 0.8)
     .where("ConnectionMM").lte(connection_size_mm * 1.2)
     .sort('model')
@@ -59,7 +59,7 @@ router.post('/results', function(req, res, next){
         models: models
       };
       /* Return search results */
-      res.render('sv-solenoid-valve/search-results', query_data);
+      res.render('ssv-solenoid-valve/search-results', query_data);
     });
 });
 

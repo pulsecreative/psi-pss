@@ -211,6 +211,89 @@ var SVSolenoidValve = mongoose.model(
     'SVSolenoidValve', 
     SVSolenoidValveSchema);
 
+// Product Schema for SSV Series Solenoid Valve
+var SSVSolenoidValveSchema = new Schema({
+    Name: String,
+    Model: String,
+    ConnectionForm: String,
+    ConnectionMM: Number,
+    ConnectionINCH: String,
+    Kv: Number,
+    OpeningDifferentialPressureMin: Number,
+    OpeningDifferentialPressureMaxAC: Number,
+    OpeningDifferentialPressureMaxDC: Number,
+    Length: Number,
+    Width: Number,
+    Height: Number,
+    ProfileImage: String,
+    Certifications: [String],
+    URL: String
+});
+
+var SSVSolenoidValve = mongoose.model(
+    'SSVSolenoidValve', 
+    SSVSolenoidValveSchema);
+
+// Product Schema for SV-G Series Water Solenoid Valve
+var SVGSolenoidValveSchema = new Schema({
+    Name: String,
+    Model: String,
+    ConnectionForm: String,
+    ConnectionMM: Number,
+    ConnectionINCH: String,
+    Kv: Number,
+    OpeningDifferentialPressureMin: Number,
+    OpeningDifferentialPressureMaxAC: Number,
+    OpeningDifferentialPressureMaxDC: Number,
+    Length: Number,
+    Width: Number,
+    Height: Number,
+    ProfileImage: String,
+    Certifications: [String],
+    URL: String
+});
+
+var SVGSolenoidValve = mongoose.model(
+    'SVGSolenoidValve', 
+    SVGSolenoidValveSchema);
+
+// Product Schema for NSV Series Solenoid Valve
+var NSVSolenoidValveSchema = new Schema({
+    Name: String,
+    Model: String,
+    ConnectionForm: String,
+    ConnectionMM: Number,
+    ConnectionINCH: String,
+    Kv: Number,
+    OpeningDifferentialPressureMin: Number,
+    OpeningDifferentialPressureMaxAC: Number,
+    OpeningDifferentialPressureMaxDC: Number,
+    ProfileImage: String,
+    Certifications: [String],
+    URL: String
+});
+
+var NSVSolenoidValve = mongoose.model(
+    'NSVSolenoidValve', 
+    NSVSolenoidValveSchema);
+
+// Product Schema for SV Series Solenoid Valve
+var ASVSolenoidValveSchema = new Schema({
+    Name: String,
+    Model: String,
+    Kv: Number,
+    MaxWorkingPressure: Number,
+    OpeningDifferentialPressureAC: Number,
+    OpeningDifferentialPressureDC: Number,
+    ProfileImage: String,
+    Certifications: [String],
+    URL: String
+});
+
+var ASVSolenoidValve = mongoose.model(
+    'ASVSolenoidValve', 
+    ASVSolenoidValveSchema);
+
 /*
 mongoose.model('SingleTemperatureSwitch').remove({}, function (err) {
     if (err) {
