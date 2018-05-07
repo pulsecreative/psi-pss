@@ -89,6 +89,40 @@ var DualTemperatureSwitch = mongoose.model(
     'DualTemperatureSwitch', 
     DualTemperatureSwitchSchema);
 
+/*
+mongoose.model('DualTemperatureSwitch').remove({}, function (err) {
+    if (err) {
+        console.log(err);
+    }
+    console.log('DualTemperatureSwitch collection removed');
+
+    DualTemperatureSwitch.create({
+        Name: "THC60 Dual Temperature Switch",
+        Model: "THC60",
+        LowTempAdjustRangeMax: 15,
+        LowTempAdjustRangeMin: -15,
+        LowTempDiffMax: 15,
+        LowTempDiffMin: 5,
+        LowReset: "Auto",
+        LowTempMax: 130,
+        HighTempAdjustRangeMax: 60,
+        HighTempAdjustRangeMin: 20,
+        HighTempDiffMax: 8,
+        HighTempDiffMin: 0,
+        HighReset: "Auto",
+        HighTempMax: 70,
+        ProfileImage: "http://fsindustriesinc.com/wp-content/uploads/THC-1.jpg",
+        Certifications: ["CE", "CQC"],
+        URL: "http://fsindustriesinc.com/products/temperature-switches/thc60/"
+    }, function(err, product){
+        if (err) {
+            console.log(err);
+        }
+        console.log(product.Name + ' saved successfully.');
+    });
+});
+*/
+
 // Product Schema for Dual Temperature Switches
 var PressureDifferentialSwitchSchema = new Schema({
     Name: String,
@@ -377,12 +411,6 @@ var SSTVExpansionValveSchema = new Schema({
 var SSTVExpansionValve = mongoose.model(
     'SSTVExpansionValve', 
     SSTVExpansionValveSchema);
-
-
-
-
-
-
 
 
 /*
