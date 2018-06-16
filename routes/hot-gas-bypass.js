@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var mongoose = require('mongoose');
-var ASVSolenoidValve = mongoose.model('ASVSolenoidValve');
+var HotGasBypass = mongoose.model('HotGasBypass');
 
 /* Round method */
 function round(value, exp) {
@@ -30,20 +30,21 @@ function round(value, exp) {
 ==
 */
 
-/* GET Page for ASV Series Solenoid Valve Product Selection Software. */
+/* GET Page for KASTV Expansion Valve Product Selection Software. */
 router.get('/', function(req, res, next) {
-  res.render('asv-solenoid-valve/search', {});
+  res.render('hot-gas-bypass/search', {});
 });
 
 /* Process Submitted Query Form; Return Search Results */
 router.post('/results', function(req, res, next){
     /* 1. Extract submitted data */
-      var Kv = req.body.Kv;
+      var nominal_capacity = req.body.nominal_capacity;
+      var nominal_capacity_ton = round(nominal_capacity / 3.5, 3);
 
     /* 2. Do a query against database based on the parameters */
-    ASVSolenoidValve
-    .where("Kv").gte(Kv * 0.8)
-    .where("Kv").lte(Kv * 1.2)
+    HotGasBypass
+    .where("NominalCapacityKW").gte(nominal_capacity * 0.8)
+    .where("NominalCapacityKW").lte(nominal_capacity * 1.2)
     .sort('model')
     .exec(function(err, models) {
       if (err) {
@@ -53,11 +54,12 @@ router.post('/results', function(req, res, next){
       console.log(models);
       
       var query_data = {
-        Kv: Kv,
+        nominal_capacity: nominal_capacity,
+        nominal_capacity_ton: nominal_capacity_ton,
         models: models
       };
       /* Return search results */
-      res.render('asv-solenoid-valve/search-results', query_data);
+      res.render('hot-gas-bypass/search-results', query_data);
     });
 });
 

@@ -42,8 +42,7 @@ var k_astv_expansion_valve = require('./routes/k-astv-expansion-valve');
 var k_bwtv_expansion_valve = require('./routes/k-bwtv-expansion-valve');
 var etv_expansion_valve = require('./routes/etv-expansion-valve');
 var sstv_expansion_valve = require('./routes/sstv-expansion-valve');
-// var liquid_injection = require('./routes/liquid-injection');
-// var hot_gas_bypass = require('./routes/hot-gas-bypass');
+var hot_gas_bypass = require('./routes/hot-gas-bypass');
 
 // use routes
 app.use('/', index);
@@ -65,8 +64,7 @@ app.use('/k-astv-expansion-valve', k_astv_expansion_valve);
 app.use('/k-bwtv-expansion-valve', k_bwtv_expansion_valve);
 app.use('/etv-expansion-valve', etv_expansion_valve);
 app.use('/sstv-expansion-valve', sstv_expansion_valve);
-// app.use('/liquid-injection', liquid_injection);
-// app.use('/hot-gas-bypass', hot_gas_bypass);
+app.use('/hot-gas-bypass', hot_gas_bypass);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

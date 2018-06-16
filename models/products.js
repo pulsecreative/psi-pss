@@ -375,3 +375,27 @@ var SSTVExpansionValveSchema = new Schema({
 var SSTVExpansionValve = mongoose.model(
     'SSTVExpansionValve', 
     SSTVExpansionValveSchema);
+
+// Product Schema for Hot Gas Bypass
+var HotGasBypassSchema = new Schema({
+    Name: String,
+    Model: String,
+    Refrigerant: String,
+    NominalCapacityKW: Number,
+    ConnectionType: String,
+    InletINCH: String,
+    OutletINCH: String,
+    OutletPressureAdjustingRangeMinMPA: Number,
+    OutletPressureAdjustingRangeMaxMPA: Number,
+    MediumTempMin: Number,
+    MediumTempMax: Number,
+    MaxWorkingPressure: Number,
+    MaxTestingPressure: Number,
+    ProfileImage: String,
+    Certifications: [String],
+    URL: String
+});
+
+var HotGasBypassSchema = mongoose.model(
+    'HotGasBypass', 
+    HotGasBypassSchema);

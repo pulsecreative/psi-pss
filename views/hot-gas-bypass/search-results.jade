@@ -9,7 +9,7 @@ html.no-js(lang='en')
     meta(name='designer', content='Michelle Yang - Pulse Creative Agency DTLA')
     meta(name='owner', content='FS Industries, Inc.')
     
-    title ASV Series Ammonia System Solenoid Valve | Product Selection Software | FS Industries, Inc.
+    title Hot Gas Bypass | Product Selection Software | FS Industries, Inc.
     // Place Favicon in the Root Directory
     link(rel='shortcut icon', href='')
     // Page/Theme Stylesheets
@@ -46,13 +46,13 @@ html.no-js(lang='en')
         .row
           .col-xs-10.col-xs-offset-1
             h1.text-color-primary Product Selection Software
-              span(style="font-size: 75%; display: block; margin-top: 12px; color: black;") ASV Series Ammonia System Solenoid Valve
+              span(style="font-size: 75%; display: block; margin-top: 12px; color: black;") Hot Gas Bypass
     // Container for Info and Form
     #products
       .container
         #products-container.row
           .col-sm-10.col-sm-offset-1 
-            h3 The Kv value you entered is #{Kv} m3/h.
+            h3 The Nominal Capacity you entered is #{nominal_capacity}KW (#{nominal_capacity_ton} Tons).
             br
             h2.text-color-primary Here is a list of product(s) that match your search criteria:
           #product-info-container.col-sm-10.col-sm-offset-1
@@ -70,28 +70,47 @@ html.no-js(lang='en')
                     .row
                       .col-xs-9.col-sm-8.col-md-6.product-info-detail
                         p
-                          b Kv Valve (m3/h)
+                          b Refrigerant
                       .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.Kv}
+                        p #{model.Refrigerant}
                     .row
                       .col-xs-9.col-sm-8.col-md-6.product-info-detail
                         p
-                          b Maximum Working Pressure (in MPa)
+                          b Nominal Capacity
+                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
+                        p #{model.NominalCapacityKW} KW
+                    .row
+                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
+                        p
+                          b Connection Type
+                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
+                        p #{model.ConnectionType}
+                    .row
+                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
+                        p
+                          b Inlet x Outlet (inches)
+                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
+                        p #{model.InletINCH} x #{model.OutletINCH}
+                    .row
+                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
+                        p
+                          b Medium Temperature
+                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
+                        p #{model.MediumTempMin} ~ #{model.MediumTempMax}
+                    .row
+                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
+                        p
+                          b Maximum Working Pressure
                       .col-xs-3.col-sm-4.col-md-6.product-info-detail
                         p #{model.MaxWorkingPressure}
                     .row
                       .col-xs-9.col-sm-8.col-md-6.product-info-detail
                         p
-                          b AC Opening Differential Pressure (in MPa)
+                          b Maximum Testing Pressure
                       .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.OpeningDifferentialPressureAC}
-                    .row
-                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
-                        p
-                          b DC Opening Differential Pressure (in MPa)
-                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.OpeningDifferentialPressureDC}
-          a(href="/asv-solenoid-valve/")
+                        p #{model.MaxTestingPressure}
+
+          a(href="/k-astv-expansion-valve/")
             button.message-button(style="background-color: #e60013; color: white; font-weight: 800;") New Search
     // Footer
     footer

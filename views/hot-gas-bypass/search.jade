@@ -9,7 +9,7 @@ html.no-js(lang='en')
     meta(name='designer', content='Michelle Yang - Pulse Creative Agency DTLA')
     meta(name='owner', content='FS Industries, Inc.')
     
-    title ASV Series Ammonia System Solenoid Valve | Product Selection Software | FS Industries, Inc.
+    title Hot Gas Bypass | Product Selection Software | FS Industries, Inc.
     // Place Favicon in the Root Directory
     link(rel='shortcut icon', href='')
     // Page/Theme Stylesheets
@@ -46,19 +46,19 @@ html.no-js(lang='en')
         .row
           .col-xs-10.col-xs-offset-1
             h1.text-color-primary Product Selection Software
-              span(style="font-size: 75%; display: block; margin-top: 12px; color: black;") ASV Series Ammonia System Solenoid Valve
+              span(style="font-size: 75%; display: block; margin-top: 12px; color: black;") Hot Gas Bypass
     // Container for Info and Form
     #contact
       .container
         .row
           #data-form.col-sm-10.col-sm-offset-1
-            h3.text-color-primary Please specify the Kv value in m3/h: 
-            span(style="font-size: 90%; display: block; margin-top: 8px; color: black;") (Please specify your input in whole number or decimal format only! No fraction is allowed. e.g. for 1 1/2, please enter 1.5 for input.)
+            h3.text-color-primary Please specify your desired Nominal Capacity in KiloWatts: 
+            span(style="font-size: 90%; display: block; margin-top: 8px; color: black;") (Please specify your input in whole number or decimal format only! No fraction is allowed. e.g. for 1 1/2 KiloWatts, please enter 1.5 for input.)
             br
-            form(action='/asv-solenoid-valve/results', method='post')
+            form(action='/hot-gas-bypass/results', method='post')
               div.col-xs-12
-                label(for='Kv') Kv value (in m3/h):
-                input(type='number', step="0.01" id='Kv', name='Kv', placeholder='e.g. 1.5', style='padding-left: 10px; padding-right: 10px; margin-left: 10px')
+                label(for='nominal_capacity') Nominal Capacity (in KiloWatts):
+                input(type='number', step="0.01" id='nominal_capacity', name='nominal_capacity', placeholder='e.g. 1.5', style='padding-left: 10px; padding-right: 10px; margin-left: 10px')
               input(type='submit', name='submit', value='Submit').message-button.text-color-primary
     // Footer
     footer

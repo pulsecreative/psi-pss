@@ -52,7 +52,7 @@ html.no-js(lang='en')
       .container
         #products-container.row
           .col-sm-10.col-sm-offset-1 
-            h3 The Connection Size you entered is #{connection_size} inches (#{connection_size_mm} mm).
+            h3 The Kv Valve you entered is #{Kv} m3/h.
             br
             h2.text-color-primary Here is a list of product(s) that match your search criteria:
           #product-info-container.col-sm-10.col-sm-offset-1
@@ -66,19 +66,13 @@ html.no-js(lang='en')
                     .row
                       .col-xs-12.product-info-detail
                         a(href=model.url)
-                          h2.text-color-primary=model.model
+                          h2.text-color-primary #{model.Name}
                     .row
                       .col-xs-9.col-sm-8.col-md-6.product-info-detail
                         p
                           b Connection Form
                       .col-xs-3.col-sm-4.col-md-6.product-info-detail
                         p #{model.ConnectionForm}
-                    .row
-                      .col-xs-9.col-sm-8.col-md-6.product-info-detail
-                        p
-                          b Connection Size in inches
-                      .col-xs-3.col-sm-4.col-md-6.product-info-detail
-                        p #{model.ConnectionINCH}
                     .row
                       .col-xs-9.col-sm-8.col-md-6.product-info-detail
                         p

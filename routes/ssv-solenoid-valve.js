@@ -38,13 +38,12 @@ router.get('/', function(req, res, next) {
 /* Process Submitted Query Form; Return Search Results */
 router.post('/results', function(req, res, next){
     /* 1. Extract submitted data */
-      var connection_size = req.body.connection_size;
-      var connection_size_mm = connection_size * 254;
+      var Kv = req.body.Kv;
 
     /* 2. Do a query against database based on the parameters */
     SSVSolenoidValve
-    .where("ConnectionMM").gte(connection_size_mm * 0.8)
-    .where("ConnectionMM").lte(connection_size_mm * 1.2)
+    .where("Kv").gte(Kv * 0.8)
+    .where("Kv").lte(Kv * 1.2)
     .sort('model')
     .exec(function(err, models) {
       if (err) {
@@ -54,8 +53,7 @@ router.post('/results', function(req, res, next){
       console.log(models);
       
       var query_data = {
-        connection_size: connection_size,
-        connection_size_mm: connection_size_mm,
+        Kv: Kv,
         models: models
       };
       /* Return search results */
